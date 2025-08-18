@@ -5,5 +5,5 @@ points = [list(map(int,sys.stdin.readline().split())) for _ in range(N)]
 
 sorted_points = sorted(points)
 
-for point in sorted_points:
-    print(point[0], point[1])
+for x, y in sorted_points:
+    sys.stdout.write(f"{x} {y}\n")
