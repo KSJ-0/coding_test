@@ -7,5 +7,5 @@ for i in range(N):
     members.append([int(age), name, num])
 
 members.sort(key= lambda k: (k[0], k[2]))
-for member in members:
-    print(member[0], member[1])
+for age, name, num in members:
+    sys.stdout.write(f"{age} {name}\n")
