@@ -1,11 +1,10 @@
 import sys
 N = int(sys.stdin.readline().strip())
 members = []
-for i in range(N):
+for _ in range(N):
     age, name = sys.stdin.readline().split()
-    num = i
-    members.append([int(age), name, num])
+    members.append([int(age), name])
 
-members.sort(key= lambda k: (k[0], k[2]))
-for age, name, num in members:
+members.sort(key= lambda k: (k[0]))
+for age, name in members:
     sys.stdout.write(f"{age} {name}\n")
