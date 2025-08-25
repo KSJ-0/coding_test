@@ -1,21 +1,14 @@
 import sys
-N = int(sys.stdin.readline().strip())
-have_num = list(map(int, sys.stdin.readline().split()))
-M = int(sys.stdin.readline().strip())
-target_num = list(map(int, sys.stdin.readline().split()))
+from collections import Counter
 
-have_num_dict = {}
-for num in have_num:
-    if num in have_num_dict:
-        have_num_dict[num] += 1
-    else:
-        have_num_dict[num] = 1
+input = sys.stdin.readline
+N = int(input().strip())
+have_num = list(map(int, input().split()))
+M = int(input().strip())
+target_num = list(map(int, input().split()))
 
-result = []
-for num in target_num:
-    if num in have_num_dict:
-        result.append(str(have_num_dict[num]))
-    else:
-        result.append('0')
+count_dict = Counter(have_num)
 
-sys.stdout.write(' '.join(result)) 
+result = [str(count_dict[num]) for num in target_num]
+
+sys.stdout.write(" ".join(result))
