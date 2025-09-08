@@ -5,11 +5,11 @@ input = sys.stdin.readline
 N = int(input().strip())
 num = []
 num_dic = {}
-sum = 0
+total = 0
 for _ in range(N):
     n = int(input().strip())
     num.append(n)
-    sum += n
+    total += n
     if n not in num_dic:
         num_dic[n] = 1 
     else:
@@ -22,7 +22,7 @@ for i in num:
         if i not in max_nums:
             max_nums.append(i)
 
-mean = sum/N
+mean = total/N
 if mean >= 0:
     mean = math.floor(mean + 0.5)
 else:
@@ -33,4 +33,4 @@ num.sort()
 print(mean)
 print(num[N//2])
 print(max_nums[1] if len(max_nums)>1 else max_nums[0])
-print(max(num)-min(num))
+print(num[N-1]-num[0])
