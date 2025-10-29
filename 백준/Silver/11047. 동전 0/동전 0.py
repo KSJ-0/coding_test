@@ -10,5 +10,7 @@ for i in range(N):
     if q > 0:
         result += q
         K -= (q*coins[N-i-1])
+    if K == 0:
+        break
 
 print(result)
